@@ -1,0 +1,20 @@
+name = OS2Web Taxon API Module
+description = Implements calls to taxon
+
+package = OS2Web - Backend
+project = os2web_taxon_api
+core = 7.x
+version = 7.x-1.0-beta1
+
+dependencies[] = os2web_taxon_taxonomy
+dependencies[] = strongarm
+features[variable][] = os2web_taxon_taxonomy_button_text
+features[variable][] = os2web_taxon_taxonomy_button_text_wait
+features[variable][] = os2web_taxon_taxonomy_ckeditor_field
+features[variable][] = os2web_taxon_taxonomy_field_name
+features[variable][] = os2web_taxon_taxonomy_not_selected_image
+features[variable][] = os2web_taxon_taxonomy_number_results_returned
+features[variable][] = os2web_taxon_taxonomy_selected_image
+features[variable][] = os2web_taxon_taxonomy_taxon_url
+features[variable][] = os2web_taxon_taxonomy_taxonomy_name
+features[variable][] = os2web_taxon_taxonomy_wait_image

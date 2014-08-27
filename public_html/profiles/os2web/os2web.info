@@ -1,0 +1,4 @@
+name = OS2Web Svendborg
+description = Svendborg installation of OS2web.
+version = 1.10
+core = 7.x

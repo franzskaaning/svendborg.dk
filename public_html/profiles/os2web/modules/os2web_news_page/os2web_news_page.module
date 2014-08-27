@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Code for the OS2web News Page feature.
+ */
+
+include_once 'os2web_news_page.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function os2web_news_page_form_os2web_base_news_node_form_alter(&$form, $form_state, $form_id) {
+  $node = $form_state['node'];
+
+  if (!isset($node->nid) || isset($node->is_new)) {
+    // Get first item in vocabulary and set selects default value..
+    $vocabulary = taxonomy_vocabulary_machine_name_load('os2web_news_page_newstypes');
+    $terms = taxonomy_get_tree($vocabulary->vid, 0, 1);
+    $first_term = reset($terms);
+    $form['field_os2web_news_page_type']['und']['#default_value'][] = $first_term->tid;
+  }
+}
