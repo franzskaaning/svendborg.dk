@@ -219,9 +219,14 @@ a {
   span {
     text-align: center;
     display: table-cell;
-    white-space: pre-wrap;
     vertical-align: middle;
   }
+}
+
+.item-text(@height) {
+  position: relative;
+  text-align: center;
+  min-height: @height;
 }
 .rss-icon {
   .sprite(@rss);
@@ -234,4 +239,17 @@ a {
 }
 .view.bg-white {
   padding: 20px
+}
+
+.padding-20 {
+  padding: 20px 20px;
+}
+.content-img-header img{
+  border-radius: 4px 4px 0 0;
+}
+.content_header_2 {
+  color: @text-color;
+  text-transform: initial;
+  font-family: @font-family-sans-serif-second;
+  font-size: @font-size-h1;
 }

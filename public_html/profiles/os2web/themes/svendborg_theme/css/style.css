@@ -6693,6 +6693,18 @@ a:hover {
 .view.bg-white {
   padding: 20px;
 }
+.padding-20 {
+  padding: 20px 20px;
+}
+.content-img-header img {
+  border-radius: 4px 4px 0 0;
+}
+.content_header_2 {
+  color: #30353c;
+  text-transform: initial;
+  font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
+  font-size: 2.55em;
+}
 /**
  * This file is only for really global styles. None specific styles.
  */
@@ -7414,9 +7426,32 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
   width: 100%;
   height: auto;
 }
+.bubble {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  min-height: 60px;
+  display: table;
+}
+.bubble span {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+.item-text {
+  position: relative;
+  text-align: center;
+  min-height: 60px;
+  padding: 10px 0;
+}
 .view-os2web-news-page .media-ustream-video iframe {
   width: 100%;
   height: auto;
+}
+.page-taxonomy-term {
+  background: white;
+  border-radius: 4px 4px;
+  margin-bottom: 20px;
 }
 .page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-row {
   border-bottom: 1px solid #dfded7;
@@ -8312,7 +8347,6 @@ fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li.active {
 #svendborg_tabs ul.quicktabs-tabs li .bubble span {
   text-align: center;
   display: table-cell;
-  white-space: pre-wrap;
   vertical-align: middle;
 }
 #svendborg_tabs ul.quicktabs-tabs li a {
@@ -8682,7 +8716,6 @@ h2.menu-footer a.Kommunen {
 .front-s-news .front-s-news-inner .front-s-news-item .front-s-news-item-text .bubble span {
   text-align: center;
   display: table-cell;
-  white-space: pre-wrap;
   vertical-align: middle;
 }
 .front-s-news .front-s-news-inner .front-s-news-item .front-s-news-item-text .bubble span {

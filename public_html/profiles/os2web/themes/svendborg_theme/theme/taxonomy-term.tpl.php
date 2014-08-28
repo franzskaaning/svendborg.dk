@@ -54,7 +54,7 @@
     <?php endif; ?>
     <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
   </header>
-  <?php endif; ?>
+
 
   <div class="col-md-12 col-sm-12 content">
     <?php
@@ -64,11 +64,14 @@
       hide($content['field_os2web_base_field_selfserv']);
       print render($content); ?>
   </div>
+  <?php endif; ?>
 </article>
 
 <?php if($page): ?>
 <div class="row">
     <div class="col-md-12 col-sm-12 clearfix">
+
+    <?php if(!$term_display_alternative) :?>
     <?php
       // Get news carousel.
       $view = views_get_view('os2web_news_lists');
@@ -82,6 +85,19 @@
         <?php print $view->render(); ?>
       </div>
     <?php endif; ?>
+    <?php else: ?>
+    <div class="bg-white content-img-header">
+      <header>
+        <?php if (isset($content['field_os2web_base_field_image'])): ?>
+          <?php print render($content['field_os2web_base_field_image']); ?>
+        <?php endif; ?>
+      </header>
+      <div class="padding-20">
+        <h2><a class="content_header_2" href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
+        <?php print render($content) ?>;
+      </div>
+    </div>
+    <?php endif;?>
 
     <?php
       // Get Sub terms.
