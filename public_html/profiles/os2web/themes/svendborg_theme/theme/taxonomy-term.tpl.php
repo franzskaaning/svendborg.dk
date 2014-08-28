@@ -80,12 +80,13 @@
       $view->set_items_per_page(3);
       $view->pre_execute();
       $view->execute();
-      if (!empty($view->result)) : ?>
+    ?>
+      <?php if (!empty($view->result)) : ?>
       <div class="col-sm-12 col-md-12 extra-bottom-padding">
         <?php print $view->render(); ?>
       </div>
-    <?php endif; ?>
-    <?php else: ?>
+      <?php endif; ?>
+    <?php elseif($term_is_top): ?>
     <div class="bg-white content-img-header">
       <header>
         <?php if (isset($content['field_os2web_base_field_image'])): ?>
@@ -94,7 +95,7 @@
       </header>
       <div class="padding-20">
         <h2><a class="content_header_2" href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
-        <?php print render($content) ?>;
+        <?php print render($content) ?>
       </div>
     </div>
     <?php endif;?>
