@@ -13,7 +13,13 @@
     <?php print render($content['field_os2web_spotbox_video']); ?>
 
     <?php if(!empty($content['field_os2web_spotbox_text'])) : ?>
-      <h3><?php print render($content['field_os2web_spotbox_text']); ?></h3>
+    <div class="item-text">
+      <div class="bubble">
+        <span>
+          <h3><?php print render($content['field_os2web_spotbox_text']); ?></h3>
+        </span>
+      </div>
+    </div>
     <?php endif; ?>
 
     <?php if(!empty($spotbox_url)) : ?>

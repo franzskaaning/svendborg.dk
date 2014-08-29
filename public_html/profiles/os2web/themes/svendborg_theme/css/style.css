@@ -8278,6 +8278,7 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web
   height: 56px;
   text-align: center;
   vertical-align: middle;
+  white-space: normal;
   color: #ffffff;
   background-image: -webkit-linear-gradient(top, #496e7e 0%, #36525e 100%);
   background-image: linear-gradient(to bottom, #496e7e 0%, #36525e 100%);
