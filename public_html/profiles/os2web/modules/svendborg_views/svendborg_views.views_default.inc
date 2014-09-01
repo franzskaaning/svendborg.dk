@@ -351,6 +351,10 @@ function svendborg_views_views_default_views() {
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-[tid]" data-filter="[tid]">[name]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filterkriterie: Ordforråd: Internt navn */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -358,6 +362,25 @@ function svendborg_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'os2web_base_tax_site_structure' => 'os2web_base_tax_site_structure',
   );
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filterkriterie: Ord i ordforråd: Navn */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['value'] = 'Borger';
+  $handler->display->display_options['filters']['name']['group'] = 2;
+  /* Filterkriterie: Ord i ordforråd: Navn */
+  $handler->display->display_options['filters']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['filters']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_1']['field'] = 'name';
+  $handler->display->display_options['filters']['name_1']['value'] = 'Erhverv';
+  $handler->display->display_options['filters']['name_1']['group'] = 2;
+  /* Filterkriterie: Ord i ordforråd: Navn */
+  $handler->display->display_options['filters']['name_2']['id'] = 'name_2';
+  $handler->display->display_options['filters']['name_2']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_2']['field'] = 'name';
+  $handler->display->display_options['filters']['name_2']['value'] = 'Politik';
+  $handler->display->display_options['filters']['name_2']['group'] = 2;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -734,8 +757,8 @@ function svendborg_views_views_default_views() {
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'infinite_scroll';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -778,32 +801,6 @@ function svendborg_views_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'plain_text';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Primære billede */
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['table'] = 'field_data_field_os2web_base_field_lead_img';
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['field'] = 'field_os2web_base_field_lead_img';
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['label'] = '';
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['settings'] = array(
-    'image_style' => 'media_thumbnail',
-    'image_link' => '',
-    'linked_field' => array(
-      'linked' => 0,
-      'destination' => '',
-      'advanced' => array(
-        'title' => '',
-        'target' => '',
-        'class' => '',
-        'rel' => '',
-        'text' => '',
-      ),
-    ),
-  );
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['separator'] = '';
   /* Felt: Indhold: Oprettelsesdato */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -823,6 +820,33 @@ function svendborg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Felt: Indhold: Primære billede */
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['table'] = 'field_data_field_os2web_base_field_lead_img';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['field'] = 'field_os2web_base_field_lead_img';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['alter']['text'] = '<div class="col-md-3 col-sm-6 col-xs-4">
+[field_os2web_base_field_lead_img]
+</div>
+<div class="col-md-9 col-sm-6 col-xs-8">
+<div>[created]</div>
+<h4>[title]</h4>
+</div>
+<div class="clearfix">';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['empty'] = '<div>[created]</div>
+<h4>[title]</h4>
+<div class="clearfix">';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['settings'] = array(
+    'image_style' => 'media_thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['separator'] = '';
   /* Felt: Global: Tilpasset tekst */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -830,14 +854,7 @@ function svendborg_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-12 col-sm-12 col-xs-12 quicktabs-nyheder-row">
 <div class="col-md-12 quicktabs-row-border">
-<div class="col-md-3 col-sm-6 col-xs-4">
-[field_os2web_base_field_lead_img]
-</div>
-<div class="col-md-9 col-sm-6 col-xs-8">
-<div>[created]</div>
-<h4>[title]</h4>
-</div>
-<div class="clearfix">
+[field_os2web_base_field_lead_img] 
 </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -871,6 +888,158 @@ function svendborg_views_views_default_views() {
   /* Display: Side */
   $handler = $view->new_display('page', 'Side', 'page_1');
   $handler->display->display_options['path'] = 'nyheder/%';
+
+  /* Display: Block_tab_2 */
+  $handler = $view->new_display('block', 'Block_tab_2', 'block_2');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Sidefod: Global: Tekstområde */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<button class="btn btn-primary">[field_os2web_news_page_type]</button>';
+  $handler->display->display_options['footer']['area']['format'] = 'plain_text';
+  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Oprettelsesdato */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd. M. Y';
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['max_length'] = '30';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Felt: Global: Tilpasset tekst */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-12 col-sm-12 col-xs-12 quicktabs-nyheder-row">
+<div class="col-md-12 quicktabs-row-border">
+<div>[created]</div>
+<h4>[title]</h4>
+<div class="clearfix">
+</div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Nyhedstype */
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['id'] = 'field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['table'] = 'field_data_field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['field'] = 'field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['alter']['text'] = 'Alle [field_os2web_news_page_type] ';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['alter']['path'] = '[field_os2web_news_page_type] ';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['settings'] = array(
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['block_description'] = 'tab';
+
+  /* Display: frontpage and carousel */
+  $handler = $view->new_display('block', 'frontpage and carousel', 'front');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-sm-6 col-xs-12 switch_elements all';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'os2web_base_news' => 'os2web_base_news',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterie: Indhold: Arkiveringsdato (field_os2web_news_page_archive) */
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['id'] = 'field_os2web_news_page_archive_value';
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['table'] = 'field_data_field_os2web_news_page_archive';
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['field'] = 'field_os2web_news_page_archive_value';
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['default_date'] = 'now';
+  /* Filterkriterie: Indhold: Arkiveringsdato (field_os2web_news_page_archive) */
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['id'] = 'field_os2web_news_page_archive_value_1';
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['table'] = 'field_data_field_os2web_news_page_archive';
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['field'] = 'field_os2web_news_page_archive_value';
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['group'] = 2;
+  /* Filterkriterie: Indhold: Primære billede (field_os2web_base_field_lead_img:fid) */
+  $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['id'] = 'field_os2web_base_field_lead_img_fid';
+  $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['table'] = 'field_data_field_os2web_base_field_lead_img';
+  $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['field'] = 'field_os2web_base_field_lead_img_fid';
+  $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['operator'] = 'not empty';
+  $handler->display->display_options['block_description'] = 'frontpage and carousel';
   $translatables['svendborg_news_view'] = array(
     t('Master'),
     t('mere'),
@@ -890,21 +1059,34 @@ function svendborg_views_views_default_views() {
     t('sidste »'),
     t('Block_tab'),
     t('<button class="btn btn-primary">[field_os2web_news_page_type]</button>'),
-    t('<div class="col-md-12 col-sm-12 col-xs-12 quicktabs-nyheder-row">
-<div class="col-md-12 quicktabs-row-border">
-<div class="col-md-3 col-sm-6 col-xs-4">
+    t('<div class="col-md-3 col-sm-6 col-xs-4">
 [field_os2web_base_field_lead_img]
 </div>
 <div class="col-md-9 col-sm-6 col-xs-8">
 <div>[created]</div>
 <h4>[title]</h4>
 </div>
-<div class="clearfix">
+<div class="clearfix">'),
+    t('<div>[created]</div>
+<h4>[title]</h4>
+<div class="clearfix">'),
+    t('<div class="col-md-12 col-sm-12 col-xs-12 quicktabs-nyheder-row">
+<div class="col-md-12 quicktabs-row-border">
+[field_os2web_base_field_lead_img] 
 </div>
 </div>'),
     t('Alle [field_os2web_news_page_type] '),
     t('tab'),
     t('Side'),
+    t('Block_tab_2'),
+    t('<div class="col-md-12 col-sm-12 col-xs-12 quicktabs-nyheder-row">
+<div class="col-md-12 quicktabs-row-border">
+<div>[created]</div>
+<h4>[title]</h4>
+<div class="clearfix">
+</div>
+</div>'),
+    t('frontpage and carousel'),
   );
   $export['svendborg_news_view'] = $view;
 
