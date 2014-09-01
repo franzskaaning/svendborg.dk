@@ -65,22 +65,19 @@
       print "</div>";
 
       // Branding news view
-      print "<div id='front-news-branding' class='front-news-branding col-md-push-1 col-md-10 col-sm-12 col-xs-12'>";
+      print "<div id='front-news-branding' class='front-news-branding col-md-push-1 col-md-10 col-sm-12 col-xs-12 carousel slide' data-ride='carousel' data-interval='false'>";
       $view = views_get_view('svendborg_news_view');
-      $view->set_display('block');
       $view->set_arguments(array('branding'));
-      $filter = $view->get_item('block', 'filter', 'promote');
+      $filter = $view->get_item('front', 'filter', 'promote');
       $filter['value'] = 1;
-      $view->set_item('block', 'filter', 'promote', $filter);
+      $view->set_item('front', 'filter', 'promote', $filter);
       $view->set_items_per_page(3);
 
       $view->execute();
 
       $results = $view->result;
 
-      print '<div class="front-seperator"></div>';
       print '
-      <div class="carousel slide" data-ride="carousel" data-interval="false">
         <!-- Indicators -->
         <ol class="carousel-indicators col-md-12 col-sm-12 col-xs-12">
         <li data-target="#front-news-branding" data-slide-to="0" class="active"></li>
@@ -132,7 +129,7 @@
       }
       print '</div>';
 
-      print "</div></div>";
+      print "</div>";
       print '<div class="front-seperator"></div>';
     ?>
 
@@ -148,13 +145,12 @@
 
 
     $view = views_get_view('svendborg_news_view');
-    $view->set_display('block');
     $view->set_arguments(array('all'));
-    $filter = $view->get_item('block', 'filter', 'promote');
+    $filter = $view->get_item('front', 'filter', 'promote');
     $filter['value'] = 1;
-    $view->set_item('block', 'filter', 'promote', $filter);
+    $view->set_item('front', 'filter', 'promote', $filter);
     $view->set_items_per_page(9);
-
+    $view->pre_execute();
     $view->execute();
 
     $results = $view->result;

@@ -2,8 +2,20 @@
   $portalkategori = field_get_items('node',$node,'field_os2web_base_field_struct');
   //$term = taxonomy_term_load($portalkategori[0]['tid']);
 
+  //this will be your top parent term if any was found
+  $top_parent_term = null;
+  $parent_terms = taxonomy_get_parents_all($portalkategori[0]['tid']);
+  //top parent term has no parents so find it out by checking if it has parents
+
+  foreach($parent_terms as $parent) {
+    $parent_parents = taxonomy_get_parents_all($parent->tid);
+    if ($parent_parents != false) {
+      //this is top parent term
+      $top_parent_term = $parent;
+    }
+  }
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes . " all"; ?> clearfix"<?php print $attributes; ?> date-filter="<?php print $portalkategori[0]['tid']; ?>">
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes . " all"; ?> clearfix"<?php print $attributes; ?> date-filter="<?php print $top_parent_term->tid ?>">
   <?php if(!$page) : ?>
 
     <div class=" ">
