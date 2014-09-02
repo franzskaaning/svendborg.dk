@@ -3113,11 +3113,40 @@ function os2web_base_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'file_entity',
+        'module' => 'field_slideshow',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'slideshow_caption' => '',
+          'slideshow_caption_link' => '',
+          'slideshow_carousel_circular' => 0,
+          'slideshow_carousel_follow' => 0,
+          'slideshow_carousel_image_style' => '',
+          'slideshow_carousel_scroll' => 1,
+          'slideshow_carousel_skin' => '',
+          'slideshow_carousel_speed' => 500,
+          'slideshow_carousel_vertical' => 0,
+          'slideshow_carousel_visible' => 3,
+          'slideshow_colorbox_image_style' => '',
+          'slideshow_colorbox_slideshow' => '',
+          'slideshow_colorbox_slideshow_speed' => 4000,
+          'slideshow_colorbox_speed' => 350,
+          'slideshow_colorbox_transition' => 'elastic',
+          'slideshow_controls' => 0,
+          'slideshow_controls_pause' => 0,
+          'slideshow_controls_position' => 'after',
+          'slideshow_field_collection_image' => '',
+          'slideshow_fx' => 'fade',
+          'slideshow_image_style' => 'svendborg_content_image',
+          'slideshow_link' => '',
+          'slideshow_order' => '',
+          'slideshow_pager' => 'number',
+          'slideshow_pager_image_style' => '',
+          'slideshow_pager_position' => 'after',
+          'slideshow_pause' => 0,
+          'slideshow_speed' => 1000,
+          'slideshow_start_on_hover' => 0,
+          'slideshow_timeout' => 4000,
         ),
-        'type' => 'file_rendered',
+        'type' => 'slideshow',
         'weight' => 0,
       ),
       'related_block' => array(
@@ -3919,6 +3948,7 @@ function os2web_base_field_default_field_instances() {
   // Exported field_instance: 'node-os2web_base_rotating_image-field_os2web_base_field_rota_img'
   $field_instances['node-os2web_base_rotating_image-field_os2web_base_field_rota_img'] = array(
     'bundle' => 'os2web_base_rotating_image',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3973,7 +4003,7 @@ function os2web_base_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'imagefield_crop',
+      'module' => 'image',
       'settings' => array(
         'allowed_schemes' => array(
           0 => 'public',
@@ -3986,11 +4016,25 @@ function os2web_base_field_default_field_instances() {
         'croparea' => '500x500',
         'enforce_minimum' => 1,
         'enforce_ratio' => 1,
+        'filefield_sources' => array(
+          'filefield_sources' => array(),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
         'resolution' => '460x260',
       ),
-      'type' => 'imagefield_crop_widget',
+      'type' => 'image_image',
       'weight' => 4,
     ),
   );
@@ -4769,6 +4813,37 @@ function os2web_base_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-os2web_base_tax_site_structure-field_alternative_display'
+  $field_instances['taxonomy_term-os2web_base_tax_site_structure-field_alternative_display'] = array(
+    'bundle' => 'os2web_base_tax_site_structure',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_alternative_display',
+    'label' => 'Alternativ visning',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-os2web_base_tax_site_structure-field_list_as_spotboks'
   $field_instances['taxonomy_term-os2web_base_tax_site_structure-field_list_as_spotboks'] = array(
     'bundle' => 'os2web_base_tax_site_structure',
@@ -4784,7 +4859,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -4801,7 +4876,7 @@ function os2web_base_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 32,
     ),
   );
 
@@ -4815,7 +4890,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -4878,7 +4953,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -4897,7 +4972,7 @@ function os2web_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 12,
+      'weight' => 33,
     ),
   );
 
@@ -4916,7 +4991,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -4933,7 +5008,7 @@ function os2web_base_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 15,
+      'weight' => 36,
     ),
   );
 
@@ -4951,7 +5026,7 @@ function os2web_base_field_default_field_instances() {
           'image_style' => 'svendborg_content_image',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5024,7 +5099,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5042,7 +5117,7 @@ function os2web_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 14,
+      'weight' => 35,
     ),
   );
 
@@ -5056,7 +5131,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5130,7 +5205,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5149,7 +5224,7 @@ function os2web_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 13,
+      'weight' => 34,
     ),
   );
 
@@ -5164,7 +5239,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5198,7 +5273,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5223,6 +5298,7 @@ function os2web_base_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Alternativ visning');
   t('Banner');
   t('Billede');
   t('Billeder');

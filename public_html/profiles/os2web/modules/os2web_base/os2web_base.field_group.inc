@@ -58,6 +58,7 @@ function os2web_base_field_group_info() {
       2 => 'field_os2web_base_field_related',
       3 => 'field_os2web_base_field_kle_ref',
       4 => 'field_os2web_base_field_hidlinks',
+      5 => 'field_alternative_display',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -710,8 +711,8 @@ function os2web_base_field_group_info() {
       0 => 'group_indhold',
       1 => 'group_billeder',
       2 => 'group_indstillinger',
-      3 => 'group_spotbokse',
-      4 => 'group_selvbetjening',
+      3 => 'group_selvbetjening',
+      4 => 'group_spotbokse',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
