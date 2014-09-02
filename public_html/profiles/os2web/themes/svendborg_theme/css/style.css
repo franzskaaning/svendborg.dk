@@ -6746,6 +6746,10 @@ body {
   background: url(../images/skateboard.jpg) no-repeat fixed;
   background-size: cover;
 }
+body .form-control {
+  color: black;
+  padding: 0px 12px;
+}
 .main-container {
   border-bottom: 1px solid white;
   background-image: rgba(223, 222, 215, 0.9);
