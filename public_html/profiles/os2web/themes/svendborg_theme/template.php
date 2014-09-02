@@ -391,6 +391,21 @@ function svendborg_theme_qt_quicktabs_tabset($vars) {
 }
 
 /**
+ * Implements theme_form_element()
+ */
+function svendborg_theme_form_element(&$variables) {
+  // Because the feeds module, puts the upload filechooser in the form element[#description]
+  // it is not shown. As bootstrap tries to put all '#description's in tooltips.
+  // This workaround puts the the description from file fields in the field suffix.
+  // This should probarbly be fixed in the feeds module, but, until then..
+  // @see https://www.drupal.org/node/2308343
+  if ($variables['element']['#type'] == 'file' && isset($variables['element']['#description'])) {
+    $variables['element']['#field_suffix'] = $variables['element']['#description'];
+  }
+  return bootstrap_form_element($variables);
+}
+
+/**
  * Helper function to get a rendeable array of spotboxes.
  *
  * @param array $spotboxes

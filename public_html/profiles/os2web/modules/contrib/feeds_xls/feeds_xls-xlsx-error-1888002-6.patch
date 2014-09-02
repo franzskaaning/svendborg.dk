@@ -1,0 +1,13 @@
+diff --git a/FeedsExcelParser.inc b/FeedsExcelParser.inc
+index 3a0e5da..164b0af 100644
+--- a/FeedsExcelParser.inc
++++ b/FeedsExcelParser.inc
+@@ -38,7 +38,7 @@ class FeedsExcelParser extends FeedsParser{
+         $path = drupal_get_path('module', 'feeds_xls') . '/PHPExcel/PHPExcel/IOFactory.php';
+       }
+       require_once $path;
+-      $this->PHPExcel_object = PHPExcel_IOFactory::load($fetcher_result->getFilePath());
++      $this->PHPExcel_object = PHPExcel_IOFactory::load(drupal_realpath($fetcher_result->getFilePath()));
+       $PHPExcel_ws = array();
+       foreach($this->PHPExcel_object->getWorksheetIterator() as $worksheet){
+         $this->PHPExcel_ws[] = $worksheet;
