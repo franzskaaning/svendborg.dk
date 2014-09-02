@@ -24,7 +24,7 @@
           $('.header_svendborg header').removeClass('navbar-fixed-top');
           $('.header_fixed_inner').removeClass('container');
           $('.header_svendborg header').addClass('container');
-          $('.main-container').css('padding-top','initial');
+          $('.main-container').css('padding-top','0');
           $('#fixed-navbar').removeClass('row');
           // Frontpage top (navbar) search forum.
           $(".front .region-navigation.container .search_box").addClass('col-md-1 col-sm-1');
