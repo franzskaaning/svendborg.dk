@@ -23,19 +23,17 @@
        //Branding news view
 
       $view = views_get_view('svendborg_news_view');
-      $view->set_display('block');
       $view->set_arguments(array('branding'));
-      $filter = $view->get_item('block', 'filter', 'promote');
+      $filter = $view->get_item('front', 'filter', 'promote');
       $filter['value'] = 1;
-      $view->set_item('block', 'filter', 'promote', $filter);
+      $view->set_item('front', 'filter', 'promote', $filter);
       $view->set_items_per_page(3);
 
       $view->execute();
 
       $results = $view->result;
-      print '<div  id="nyheder-carousel-large">';
+      print '<div  id="nyheder-carousel-large" class="carousel slide" data-ride="carousel" data-interval="false">';
       print '
-      <div class="carousel slide" data-ride="carousel" data-interval="false">
         <!-- Indicators -->
         <ol class="carousel-indicators col-md-12 col-sm-12 col-xs-12">
         <li data-target="#nyheder-carousel-large" data-slide-to="0" class="active"></li>
@@ -83,7 +81,7 @@
         print '</a>
         </div>';
       }
-      print '</div></div></div>';
+      print '</div></div>';
       drupal_add_js('http://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js');
     ?>
     <div class="nyheder-seperator"></div>
