@@ -135,20 +135,33 @@ a {
   .carousel-inner > .item {
     a > img,
     > img {
-      max-width: 70%;
-      display: inline;
-      float: left;
+      @media (min-width: 992px) {
+        max-width: 70%;
+        display: inline;
+        float: left;
+      }
+      @media (max-width:active 991px) {
+        max-width: 100%;
+        display: block;
+        float: none;
+      }
     }
     > .carousel-caption {
-      width: 30%;
-      right: 0;
-      left: initial;
-      position: relative;
-      float: left;
-      text-align: left;
-      padding: 10px;
-      margin-top: 20px;
-      text-shadow: initial;
+        @media (min-width: 992px) {
+          width: 30%;
+          float: left;
+        }
+        @media (max-width: 991px) {
+          width: 100%;
+          float: none;
+        }
+        right: 0;
+        left: initial;
+        position: relative;
+        text-align: left;
+        padding: 10px;
+        margin-top: 20px;
+        text-shadow: initial;
       a {
         font-size: @font-size-h2;
         color: @text-color;
