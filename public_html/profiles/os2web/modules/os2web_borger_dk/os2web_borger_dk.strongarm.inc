@@ -13,55 +13,6 @@ function os2web_borger_dk_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_os2web_borger_dk_article';
-  $strongarm->value = 0;
-  $export['comment_anonymous_os2web_borger_dk_article'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_os2web_borger_dk_article';
-  $strongarm->value = 1;
-  $export['comment_default_mode_os2web_borger_dk_article'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_os2web_borger_dk_article';
-  $strongarm->value = '50';
-  $export['comment_default_per_page_os2web_borger_dk_article'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_os2web_borger_dk_article';
-  $strongarm->value = 1;
-  $export['comment_form_location_os2web_borger_dk_article'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_os2web_borger_dk_article';
-  $strongarm->value = '2';
-  $export['comment_os2web_borger_dk_article'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_os2web_borger_dk_article';
-  $strongarm->value = '1';
-  $export['comment_preview_os2web_borger_dk_article'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_os2web_borger_dk_article';
-  $strongarm->value = 1;
-  $export['comment_subject_field_os2web_borger_dk_article'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__os2web_borger_dk_article';
   $strongarm->value = array(
     'view_modes' => array(
@@ -92,6 +43,12 @@ function os2web_borger_dk_strongarm() {
       'meeting_detail_view' => array(
         'custom_settings' => FALSE,
       ),
+      'spotbox' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -100,6 +57,9 @@ function os2web_borger_dk_strongarm() {
         ),
         'path' => array(
           'weight' => '13',
+        ),
+        'metatags' => array(
+          'weight' => '40',
         ),
       ),
       'display' => array(),
@@ -119,10 +79,7 @@ function os2web_borger_dk_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_os2web_borger_dk_article';
   $strongarm->value = array(
-    0 => 'borgerdkmenu2',
-    1 => 'os2web-main-menu',
-    2 => 'main-menu',
-    3 => 'os2web-menu-contentmenu',
+    0 => 'menu-indholdsmenu',
   );
   $export['menu_options_os2web_borger_dk_article'] = $strongarm;
 
@@ -130,14 +87,17 @@ function os2web_borger_dk_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_os2web_borger_dk_article';
-  $strongarm->value = 'borgerdkmenu2:0';
+  $strongarm->value = 'menu-indholdsmenu:0';
   $export['menu_parent_os2web_borger_dk_article'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_os2web_borger_dk_article';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'status',
+    1 => 'revision',
+  );
   $export['node_options_os2web_borger_dk_article'] = $strongarm;
 
   $strongarm = new stdClass();
