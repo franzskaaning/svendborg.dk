@@ -123,6 +123,12 @@ function svendborg_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'kulturkalender' => 'kulturkalender',
   );
+  /* Filterkriterie: Indhold: Kulturkalender Kategori ID (field_kulturkalender_kategori_id) */
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['id'] = 'field_kulturkalender_kategori_id_value';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['table'] = 'field_data_field_kulturkalender_kategori_id';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['field'] = 'field_kulturkalender_kategori_id_value';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['value']['value'] = '3';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -209,6 +215,39 @@ function svendborg_views_views_default_views() {
             </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sorteringskriterie: Indhold: Kulturkalender Dato -  startdato (field_kulturkalender_dato) */
+  $handler->display->display_options['sorts']['field_kulturkalender_dato_value']['id'] = 'field_kulturkalender_dato_value';
+  $handler->display->display_options['sorts']['field_kulturkalender_dato_value']['table'] = 'field_data_field_kulturkalender_dato';
+  $handler->display->display_options['sorts']['field_kulturkalender_dato_value']['field'] = 'field_kulturkalender_dato_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'kulturkalender' => 'kulturkalender',
+  );
+  /* Filterkriterie: Indhold: Kulturkalender Kategori ID (field_kulturkalender_kategori_id) */
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['id'] = 'field_kulturkalender_kategori_id_value';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['table'] = 'field_data_field_kulturkalender_kategori_id';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['field'] = 'field_kulturkalender_kategori_id_value';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['value']['value'] = '3';
+  /* Filterkriterie: Indhold: Kulturkalender Dato -  startdato (field_kulturkalender_dato) */
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['id'] = 'field_kulturkalender_dato_value';
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['table'] = 'field_data_field_kulturkalender_dato';
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['field'] = 'field_kulturkalender_dato_value';
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'culture-calendar';
 
   /* Display: Block */
@@ -232,6 +271,44 @@ function svendborg_views_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<button class="btn btn-primary"><a href="http://www.svendborgkultur.dk/">
     Se kulturkalender  </a></button>';
   $handler->display->display_options['footer']['area']['format'] = 'plain_text';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sorteringskriterie: Indhold: Kulturkalender Dato -  startdato (field_kulturkalender_dato) */
+  $handler->display->display_options['sorts']['field_kulturkalender_dato_value']['id'] = 'field_kulturkalender_dato_value';
+  $handler->display->display_options['sorts']['field_kulturkalender_dato_value']['table'] = 'field_data_field_kulturkalender_dato';
+  $handler->display->display_options['sorts']['field_kulturkalender_dato_value']['field'] = 'field_kulturkalender_dato_value';
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'kulturkalender' => 'kulturkalender',
+  );
+  /* Filterkriterie: Indhold: Kulturkalender Kategori ID (field_kulturkalender_kategori_id) */
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['id'] = 'field_kulturkalender_kategori_id_value';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['table'] = 'field_data_field_kulturkalender_kategori_id';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['field'] = 'field_kulturkalender_kategori_id_value';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_kulturkalender_kategori_id_value']['value']['value'] = '3';
+  /* Filterkriterie: Indhold: Kulturkalender Dato -  startdato (field_kulturkalender_dato) */
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['id'] = 'field_kulturkalender_dato_value';
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['table'] = 'field_data_field_kulturkalender_dato';
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['field'] = 'field_kulturkalender_dato_value';
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_kulturkalender_dato_value']['default_date'] = 'now';
   $translatables['culture_calendar'] = array(
     t('Master'),
     t('Kulturkalender'),
