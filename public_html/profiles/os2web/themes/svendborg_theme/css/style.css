@@ -8393,12 +8393,12 @@ fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li.active {
 }
 @media (min-width: 767px) {
   #svendborg_tabs ul.quicktabs-tabs li a {
-    width: 45px;
+    width: 55px;
   }
 }
 @media (max-width: 520px) {
   #svendborg_tabs ul.quicktabs-tabs li a {
-    width: 45px;
+    width: 55px;
   }
 }
 #svendborg_tabs .views-row {
