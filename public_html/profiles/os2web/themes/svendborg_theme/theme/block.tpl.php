@@ -38,7 +38,7 @@
   <?php if ($title && $block_html_id == "block-views-news-filter-block"): ?>
   <div class="panel panel-primary with-big-arrow">
     <div class="panel-heading">
-      <a class="rss-icon" href="#"></a>
+      <!--<a class="rss-icon" href="#"></a>-->
           <h3 class="panel-title"><?php print $title; ?></h3>
     </div>
 
