@@ -166,6 +166,7 @@ features[field_instance][] = node-os2web_base_news-field_os2web_base_field_case
 features[field_instance][] = node-os2web_base_news-field_os2web_base_field_contact
 features[field_instance][] = node-os2web_base_news-field_os2web_base_field_doc
 features[field_instance][] = node-os2web_base_news-field_os2web_base_field_edi_tags
+features[field_instance][] = node-os2web_base_news-field_os2web_base_field_hidlinks
 features[field_instance][] = node-os2web_base_news-field_os2web_base_field_kle_ref
 features[field_instance][] = node-os2web_base_news-field_os2web_base_field_lead_img
 features[field_instance][] = node-os2web_base_news-field_os2web_base_field_loca_ref

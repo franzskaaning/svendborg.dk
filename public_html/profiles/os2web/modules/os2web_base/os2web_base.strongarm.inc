@@ -509,6 +509,9 @@ function os2web_base_strongarm() {
         'metatags' => array(
           'weight' => '4',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
       ),
     ),
   );

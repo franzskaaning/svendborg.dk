@@ -412,6 +412,7 @@ function os2web_base_field_group_info() {
       2 => 'field_os2web_base_field_ref_node',
       3 => 'field_svendborg_hide_sidebar',
       4 => 'field_os2web_base_field_contact',
+      5 => 'field_os2web_base_field_hidlinks',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
