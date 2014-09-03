@@ -65,7 +65,10 @@ function os2web_contact_block_view($delta = '') {
   switch ($delta) {
     case 'os2web_contact':
       if ($nid = os2web_contact_get_block()) {
-        $block['content'] = drupal_render(node_view(node_load($nid)));
+        $node = node_load($nid);
+        if ($node) {
+          $block['content'] = drupal_render(node_view($node));
+        }
       }
 
       break;
