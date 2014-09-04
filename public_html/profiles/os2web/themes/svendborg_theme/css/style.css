@@ -6820,16 +6820,51 @@ body .form-control {
 }
 #block-feedback-form #feedback-status-message {
   position: absolute;
-  top: -5px;
-  right: 20px;
+  top: 25px;
+  right: 40px;
   padding: 0px 10px;
   font-size: 18px;
   height: 20px;
   font-weight: bold;
 }
 #block-feedback-form .feedback-messages {
-  max-height: 150px;
+  max-height: 125px;
   overflow-y: scroll;
+}
+#block-feedback-form #feedback-submit.btn-default {
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #85c500 0%, #589000 100%);
+  background-image: linear-gradient(to bottom, #85c500 0%, #589000 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff85c500', endColorstr='#ff589000', GradientType=0);
+  border: none;
+}
+#block-feedback-form #feedback-submit.btn-default:hover,
+#block-feedback-form #feedback-submit.btn-default:focus,
+#block-feedback-form #feedback-submit.btn-default:active,
+#block-feedback-form #feedback-submit.btn-default.active {
+  background-image: -webkit-linear-gradient(top, #589000 0%, #85c500 100%);
+  background-image: linear-gradient(to bottom, #589000 0%, #85c500 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff589000', endColorstr='#ff85c500', GradientType=0);
+  color: #ffffff;
+}
+#block-feedback-form #feedback-submit.btn-default.disabled,
+#block-feedback-form #feedback-submit.btn-default[disabled],
+fieldset[disabled] #block-feedback-form #feedback-submit.btn-default,
+#block-feedback-form #feedback-submit.btn-default.disabled:hover,
+#block-feedback-form #feedback-submit.btn-default[disabled]:hover,
+fieldset[disabled] #block-feedback-form #feedback-submit.btn-default:hover,
+#block-feedback-form #feedback-submit.btn-default.disabled:focus,
+#block-feedback-form #feedback-submit.btn-default[disabled]:focus,
+fieldset[disabled] #block-feedback-form #feedback-submit.btn-default:focus,
+#block-feedback-form #feedback-submit.btn-default.disabled:active,
+#block-feedback-form #feedback-submit.btn-default[disabled]:active,
+fieldset[disabled] #block-feedback-form #feedback-submit.btn-default:active,
+#block-feedback-form #feedback-submit.btn-default.disabled.active,
+#block-feedback-form #feedback-submit.btn-default[disabled].active,
+fieldset[disabled] #block-feedback-form #feedback-submit.btn-default.active {
+  background-color: #589000;
 }
 #block-cittaslow-block {
   top: 320px;
