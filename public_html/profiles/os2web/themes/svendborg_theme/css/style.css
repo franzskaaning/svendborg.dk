@@ -7450,6 +7450,23 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
   width: 100%;
   height: auto;
 }
+.caption .item-text {
+  position: relative;
+  min-height: 56px;
+  text-align: center;
+}
+.caption .item-text .bubble {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  min-height: 56px;
+  display: table;
+}
+.caption .item-text .bubble span {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
 .view-os2web-news-page .media-ustream-video iframe {
   width: 100%;
   height: auto;
