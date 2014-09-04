@@ -4,7 +4,7 @@
   <?php print render($page['navigation']); ?>
 <?php endif; ?>
 <div class="front-main-container-wrapper">
-<div class="main-container container">
+<div class="">
 
   <div class="row">
   <?php /* region--header.tpl.php */ ?>
@@ -17,6 +17,11 @@
 
     <!-- taxonomy-term--tid.tpl.php-->
     <div class="region region-content col-md-8 col-sm-8 col-xs-12">
+      <?php if ($tabs): ?>
+        <div class="tabs">
+          <?php print render($tabs); ?>
+        </div>
+      <?php endif; ?>
       <h1>Nyheder og aktuelt</h1>
     <?php
 
@@ -82,7 +87,6 @@
         </div>';
       }
       print '</div></div>';
-      drupal_add_js('http://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js');
     ?>
     <div class="nyheder-seperator"></div>
     <div class="nyheder-content" id="nyheder-content-isotoper">
@@ -92,10 +96,6 @@
       $view = views_get_view('svendborg_news_view');
       $view->set_display('block');
       $view->set_arguments(array('nyhed'));
-      //$filter = $view->get_item('block', 'filter', 'promote');
-      //$filter['value'] = 1;
-      //$view->set_item('block', 'filter', 'promote', $filter);
-      //$view->set_items_per_page(3);
 
       $view->execute();
       print $view->render('block');
@@ -111,8 +111,6 @@
       $block = block_load('views','news_filter-block');
       $output = _block_get_renderable_array(_block_render_blocks(array($block)));
       print drupal_render($output);
-      //print views_embed_view('news_filter', 'panel_pane_1');
-
     ?>
 
       <?php
@@ -131,9 +129,11 @@
     </div>
 
     <div class="nyheder-seperator"></div>
+
+    <!-- spotboxes.-->
     <div class="">
       <?php if(!empty($os2web_spotboxes)) : ?>
-      <div class="os2web_spotboxes col-md-12 col-sm-12 clearfix">
+      <div class="os2web_spotboxes col-md-12 col-sm-12 clearfix row-no-padding">
         <div class="row">
           <?php print render($os2web_spotboxes); ?>
         </div>

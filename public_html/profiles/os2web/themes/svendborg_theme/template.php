@@ -215,9 +215,6 @@ function svendborg_theme_preprocess_page(&$variables) {
     ),
   ), 'google_font_svendborg_theme');
 
-  if ($term && strtolower($term->name) === "nyheder") {
-    $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $term->tid;
-  }
 }
 
 /**
@@ -236,6 +233,7 @@ function svendborg_theme_preprocess_taxonomy_term(&$variables) {
   if (isset($term->tid) && (strtolower($term->name) === 'nyheder' || $term_is_top)) {
     $spotboxes = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_spotbox');
     if (strtolower($term->name) === 'nyheder') {
+      $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $term->tid;
       $variables['os2web_spotboxes'] = _svendborg_theme_get_spotboxes($spotboxes, 'col-xs-6 col-sm-6 col-md-6 col-lg-6');
     }
     else {
