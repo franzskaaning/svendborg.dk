@@ -5025,6 +5025,59 @@ function os2web_base_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-os2web_base_tax_site_structure-field_os2web_base_field_ext_link'
+  $field_instances['taxonomy_term-os2web_base_tax_site_structure-field_os2web_base_field_ext_link'] = array(
+    'bundle' => 'os2web_base_tax_site_structure',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_os2web_base_field_ext_link',
+    'label' => 'Unikke eksterne links	',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 35,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-os2web_base_tax_site_structure-field_os2web_base_field_hidlinks'
   $field_instances['taxonomy_term-os2web_base_tax_site_structure-field_os2web_base_field_hidlinks'] = array(
     'bundle' => 'os2web_base_tax_site_structure',
@@ -5057,7 +5110,7 @@ function os2web_base_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 36,
+      'weight' => 37,
     ),
   );
 
@@ -5166,7 +5219,7 @@ function os2web_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 35,
+      'weight' => 36,
     ),
   );
 

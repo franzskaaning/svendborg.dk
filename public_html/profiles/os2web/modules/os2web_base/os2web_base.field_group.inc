@@ -59,6 +59,7 @@ function os2web_base_field_group_info() {
       3 => 'field_os2web_base_field_kle_ref',
       4 => 'field_os2web_base_field_hidlinks',
       5 => 'field_alternative_display',
+      6 => 'field_os2web_base_field_ext_link',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

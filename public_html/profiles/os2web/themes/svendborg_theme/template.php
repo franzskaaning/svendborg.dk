@@ -123,8 +123,10 @@ function svendborg_theme_preprocess_page(&$variables) {
       }
     }
   }
+
   // External related links
-  if ($node && $ext_links = field_get_items('node', $node, 'field_os2web_base_field_ext_link')) {
+  if (($node && $ext_links = field_get_items('node', $node, 'field_os2web_base_field_ext_link')) ||
+      ($term && $ext_links = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_ext_link'))) {
     foreach ($ext_links as $link) {
       $related_links[] = array(
         'url' => $link['url'],
