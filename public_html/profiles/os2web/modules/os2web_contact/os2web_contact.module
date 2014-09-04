@@ -38,7 +38,9 @@ function os2web_contact_get_block() {
       }
     }
     if (isset($field[0]['nid'])) {
-      $result = $field[0]['nid'];
+      if (node_load($field[0]['nid'])) {
+        $result = $field[0]['nid'];
+      }
       break;
     }
   }

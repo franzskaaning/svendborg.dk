@@ -171,7 +171,7 @@ function svendborg_theme_preprocess_page(&$variables) {
   if ($term) {
     $view = views_get_view('os2web_news_lists');
     $view->set_display('panel_pane_2');
-    $view->set_arguments(array('all', 'Branding', $term->name));
+    $view->set_arguments(array('all', 'Branding', $term->tid));
     $view->set_items_per_page(3);
     $view->pre_execute();
     $view->execute();
