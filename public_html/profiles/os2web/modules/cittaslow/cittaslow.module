@@ -3,11 +3,14 @@
  * Implements hook_page_build().
  */
 function cittaslow_page_build(&$page) {
+  global $theme;
+  if ($theme == "svendborg_theme") {
     $page['page_bottom']['cittaslow'] = array(
       '#theme' => 'cittaslow_block_display',
       '#title' => t('Cittaslow'),
       '#content' => '',
     );
+  }
 }
 
 /**
