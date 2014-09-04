@@ -19,7 +19,7 @@ function os2web_borger_dk_ctools_plugin_api($module = NULL, $api = NULL) {
 function os2web_borger_dk_node_info() {
   $items = array(
     'os2web_borger_dk_article' => array(
-      'name' => t('Borger.dk artikel'),
+      'name' => t('Borger.dk article'),
       'base' => 'node_content',
       'description' => t('Handles articles from Borger.dk. Including integration with the Borger.dk-webservice'),
       'has_title' => '1',
