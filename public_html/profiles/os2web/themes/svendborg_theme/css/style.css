@@ -8225,6 +8225,10 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web
 .page-node .region-content.col-md-12 article header {
   width: 83.33333333%;
 }
+.region-content .taxonomy-term-description a,
+.region-content .field-name-body a {
+  font-weight: bold;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
