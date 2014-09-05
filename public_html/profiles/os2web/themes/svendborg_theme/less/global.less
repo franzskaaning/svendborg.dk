@@ -98,16 +98,19 @@ body {
   }
   #feedback-status-message {
     position: absolute;
-    top: -5px;
-    right: 20px;
+    top: 25px;
+    right: 40px;
     padding: 0px 10px;
     font-size: 18px;
     height: 20px;
     font-weight: bold;
   }
   .feedback-messages {
-    max-height: 150px;
+    max-height: 125px;
     overflow-y: scroll;
+  }
+  #feedback-submit.btn-default {
+    .pretty-buttons(@btn-primary-color, @brand-lightgreen, @btn-primary-bg);
   }
 }
 

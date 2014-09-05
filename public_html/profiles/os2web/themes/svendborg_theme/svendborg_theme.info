@@ -46,6 +46,7 @@ scripts[] = 'bootstrap/js/scrollspy.js'
 scripts[] = 'bootstrap/js/tab.js'
 scripts[] = 'bootstrap/js/transition.js'
 
+scripts[] = 'js/jquery.imagesloaded.js'
 scripts[] = 'js/masonry.pkgd.min.js'
 scripts[] = 'js/isotope.pkgd.min.js'
 scripts[] = 'js/script.js'

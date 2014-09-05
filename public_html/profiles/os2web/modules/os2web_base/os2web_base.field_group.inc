@@ -20,22 +20,24 @@ function os2web_base_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_term';
   $field_group->data = array(
-    'label' => 'Billeder',
+    'label' => 'Billeder og filer',
     'weight' => '14',
     'children' => array(
       0 => 'field_os2web_base_field_banner',
       1 => 'field_os2web_base_field_logo',
       2 => 'field_os2web_base_field_image',
+      3 => 'field_os2web_base_field_media',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Billeder og filer',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-billeder field-group-htab',
         'required_fields' => 1,
         'id' => '',
+        'classes' => 'group-billeder field-group-htab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_billeder|taxonomy_term|os2web_base_tax_site_structure|form'] = $field_group;
@@ -59,6 +61,7 @@ function os2web_base_field_group_info() {
       3 => 'field_os2web_base_field_kle_ref',
       4 => 'field_os2web_base_field_hidlinks',
       5 => 'field_alternative_display',
+      6 => 'field_os2web_base_field_ext_link',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -409,10 +412,11 @@ function os2web_base_field_group_info() {
     'children' => array(
       0 => 'field_os2web_base_field_promote',
       1 => 'field_os2web_base_field_related',
-      2 => 'field_os2web_base_field_ref_node',
-      3 => 'field_svendborg_hide_sidebar',
-      4 => 'field_os2web_base_field_contact',
-      5 => 'field_os2web_base_field_hidlinks',
+      2 => 'field_svendborg_hide_sidebar',
+      3 => 'field_os2web_base_field_contact',
+      4 => 'field_os2web_base_field_hidlinks',
+      5 => 'field_os2web_base_field_spotbox',
+      6 => 'field_os2web_base_field_ext_link',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -539,7 +543,8 @@ function os2web_base_field_group_info() {
       2 => 'field_os2web_base_field_struct',
       3 => 'field_os2web_base_field_summary',
       4 => 'field_os2web_base_field_media',
-      5 => 'title',
+      5 => 'field_os2web_base_field_video',
+      6 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
