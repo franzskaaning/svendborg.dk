@@ -189,6 +189,9 @@ function svendborg_theme_preprocess_page(&$variables) {
     if($term_is_top) {
       $variables['page']['sidebar_first'] = array();
     }
+    if ($term && strtolower($term->name) === "nyheder") {
+      $variables['page']['sidebar_second'] = array();
+    }
   }
 
   // Spotbox handling. Find all spotboxes for this node, and add them to
@@ -240,7 +243,7 @@ function svendborg_theme_preprocess_taxonomy_term(&$variables) {
       $variables['os2web_spotboxes'] = _svendborg_theme_get_spotboxes($spotboxes, 'col-xs-6 col-sm-4 col-md-3 col-lg-3');
     }
   }
-  if (isset($term->field_alternative_display['und'][0]['value']) ||
+  if (isset($term->field_alternative_display['und'][0]['value']) &&
         $term->field_alternative_display['und'][0]['value'] == 1) {
     $variables['term_display_alternative'] = TRUE;
   }
