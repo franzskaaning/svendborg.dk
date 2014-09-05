@@ -56,11 +56,10 @@
 
       print "</div>";
 
-      //print render($page['content']);
       // Search-box
       print "<div class='front-search-box col-md-push-3 col-md-6 col-sm-push-3 col-sm-6 col-xs-12'>";
-        $block_search_form = module_invoke('search', 'block_view', 'search');
-        print render($block_search_form);
+      $block_search_form = module_invoke('search', 'block_view', 'search');
+      print render($block_search_form);
       print "</div>";
 
       // Branding news view

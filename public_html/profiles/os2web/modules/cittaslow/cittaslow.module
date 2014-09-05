@@ -3,8 +3,7 @@
  * Implements hook_page_build().
  */
 function cittaslow_page_build(&$page) {
-  global $theme;
-  if ($theme == "svendborg_theme") {
+  if (!path_is_admin(current_path())) {
     $page['page_bottom']['cittaslow'] = array(
       '#theme' => 'cittaslow_block_display',
       '#title' => t('Cittaslow'),

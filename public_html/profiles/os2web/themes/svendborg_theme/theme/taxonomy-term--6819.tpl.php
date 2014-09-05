@@ -4,7 +4,6 @@
   <?php print render($page['navigation']); ?>
 <?php endif; ?>
 <div class="front-main-container-wrapper">
-<div class="">
 
   <div class="row">
   <?php /* region--header.tpl.php */ ?>
@@ -143,7 +142,7 @@
 
   </div>
   <!-- end of right sidebar -->
-  </div>
+
 </div>
 <?php /* region--footer.tpl.php */ ?>
 <?php print render($page['footer']); ?>
